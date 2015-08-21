@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+</head>
+
+<body ng-app="app">
+    <div class="jumbotron">
+        <h1 class="text-center">
+            Using ngMessages API
+       </h1>
+    </div>
+    <div class="container">
+        <form name="exampleForm">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" class="form-control" name="userFirstName" ng-model="firstName" required />
+                <div ng-messages="exampleForm.userFirstName.$error">
+                    <div ng-message="required">This field is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" name="userLastName" ng-model="lastName" required />
+                <div ng-messages="exampleForm.userLastName.$error">
+                    <div ng-message="required">This field is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email Address:</label>
+                <input type="email" name="userEmail" ng-model="email" required />
+                <div ng-messages="exampleForm.userEmail.$error">
+                    <div ng-message="required">This field is required</div>
+                    <div ng-message="email">Your email address is invalid</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="email" name="userPhoneNumber" ng-model="phoneNumber" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required/>
+                <div ng-messages="exampleForm.userPhoneNumber.$error">
+                    <div ng-message="required">This field is required</div>
+                    <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>User Message:</label>
+                <textarea type="text" name="userMessage" class="form-control" rows="4" ng-model="message" ng-minlength="100" ng-maxlength="1000" required></textarea>
+                <div ng-messages="exampleForm.userMessage.$error">
+                    <div ng-message="required">This field is required</div>
+                    <div ng-message="minlength">Message must be over 100 characters</div>
+                    <div ng-message="maxlength">Message must not exceed 1000 characters</div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-messages.min.js
+"></script>
+    <script src="app.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+    </script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
