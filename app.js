@@ -1,3 +1,1 @@
-var app = angular.module('app', [
-    'ngMessages'
-    ]);
+var app = angular.module('app', ['ngMessages']);

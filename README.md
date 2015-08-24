@@ -1,6 +1,5 @@
-# SpNgMessages
-A tutorial on using Angular's ngMessages API. 
+#Easy Form Validation in AngularJS with ngMessages
 
-Feel free to replicate this code and use it throughout your applications! 
+A tutorial on using Angular's ngMessages API.
 
-
+Article url: http://www.sitepoint.com/easy-form-validation-angularjs-ngmessages
